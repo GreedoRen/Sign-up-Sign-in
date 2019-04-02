@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, NavLink} from 'react-router-dom';
 import SignUpForm from './pages/SignUpForm';
 import SignInForm from './pages/SignInForm';
 import './App.css';
@@ -14,14 +14,14 @@ class App extends Component {
 
         <div className="App__Form">
           <div className="PageSwitcher">
-            <a href="#" className="PageSwitcher__Item">Sing In</a>
-            <a href="#" className="PageSwitcher__Item PageSwitcher__Item--Active">Sign Up</a>
+            <NavLink to="/sign-in" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sing In</NavLink>
+            <NavLink exact to="/" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
           </div>
 
           <div className="FormTitle">
-            <Link to="/sign-in" className="FormTitle__Link">Sign In</Link>
+            <NavLink Link to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink>
             or
-            <Link to="/" className="FormTitle__Link FormTitle__Link--Active">Sign Up</Link>
+            <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
           </div>
 
 
